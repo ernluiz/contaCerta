@@ -2,7 +2,6 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart, LinearScale, BarElement, CategoryScale, Title } from 'chart.js';
 
-// Registrar escalas e elementos
 Chart.register(CategoryScale, LinearScale, BarElement, Title);
 
 interface ChartData {
@@ -21,7 +20,7 @@ const ExpenseIncomeChart: React.FC<ExpenseIncomeChartProps> = ({ data }) => {
             {
                 label: "Total",
                 data: [data.income, data.expenses],
-                backgroundColor: ["#4caf50", "#f44336"], // Cores para receitas e despesas
+                backgroundColor: ["#4caf50", "#f44336"],
                 borderColor: ["#388e3c", "#c62828"],
                 borderWidth: 1,
             },
@@ -36,7 +35,7 @@ const ExpenseIncomeChart: React.FC<ExpenseIncomeChartProps> = ({ data }) => {
         },
     };
 
-    return <Bar data={chartData} options={options} />;
+    return <Bar data={chartData} options={options} className="chart-canvas" />;
 };
 
 export default ExpenseIncomeChart;

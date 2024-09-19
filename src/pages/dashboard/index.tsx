@@ -77,15 +77,15 @@ const Dashboard = () => {
 
   const totals = calculateTotals();
 
-  // const totalreceita = transactions
-  //   .filter((transaction) => transaction.type === 'receita')
-  //   .reduce((acc, transaction) => acc + transaction.amount, 0);
+  const totalreceita = transactions
+    .filter((transaction) => transaction.type === 'receita')
+    .reduce((acc, transaction) => acc + transaction.amount, 0);
 
-  // const totaldespesas = transactions
-  //   .filter((transaction) => transaction.type === 'despesa')
-  //   .reduce((acc, transaction) => acc + transaction.amount, 0);
+  const totaldespesas = transactions
+    .filter((transaction) => transaction.type === 'despesa')
+    .reduce((acc, transaction) => acc + transaction.amount, 0);
 
-  // const balance = totalreceita - totaldespesas;
+  const balance = totalreceita - totaldespesas;
 
   return (
     <div className='dashboard-container'>
@@ -106,7 +106,7 @@ const Dashboard = () => {
           required
         />
         <select value={type} onChange={(e) => setType(e.target.value as 'receita' | 'despesa')} required>
-          <option value="receita">Renda</option>
+          <option value="receita">Receita</option>
           <option value="despesa">Despesa</option>
         </select>
         <button onClick={handleAddTransaction}>
@@ -121,12 +121,12 @@ const Dashboard = () => {
         />
         <h2>Gráfico de Receitas e Despesas</h2>
         <ExpenseIncomeChart data={totals} />
-        {/* <div className='dashboard-summary'>
+        <div className='dashboard-summary'>
           <h3>Resumo</h3>
           <p>Total de Receitas: R$ {totalreceita.toFixed(2)}</p>
           <p>Total de Despesas: R$ {totaldespesas.toFixed(2)}</p>
           <p>Saldo: R$ {balance.toFixed(2)}</p>
-        </div> */}
+        </div>
       </div>
     </div>
   );

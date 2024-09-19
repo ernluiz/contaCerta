@@ -55,3 +55,7 @@ nav ul li a.active {
   background-color: #007bff;
   color: #fff;
 }
+
+.chart-canvas {
+  max-height: 150px;
+}

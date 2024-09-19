@@ -35,22 +35,22 @@ export const TransactionProvider = ({ children }: { children: ReactNode }) => {
     setTransactions((prev) => prev.filter((transaction) => transaction.id !== id));
   };
 
-  // const calculateTotals = () => {
-  //   let income = 0;
-  //   let expenses = 0;
+  const calculateTotals = () => {
+    let income = 0;
+    let expenses = 0;
 
-  //   transactions.forEach((transaction) => {
-  //     if (transaction.type === "receita") {
-  //       income += transaction.amount;
-  //     } else {
-  //       expenses += transaction.amount;
-  //     }
-  //   });
+    transactions.forEach((transaction) => {
+      if (transaction.type === "receita") {
+        income += transaction.amount;
+      } else {
+        expenses += transaction.amount;
+      }
+    });
 
-  //   return { income, expenses };
-  // };
+    return { income, expenses };
+  };
 
-  // const totals = calculateTotals();
+  const totals = calculateTotals();
 
   return (
     <div>
