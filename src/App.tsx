@@ -9,16 +9,14 @@ import Login from "./pages/login";
 import { TransactionProvider } from "./context/TransactionContext";
 import { useEffect } from "react";
 
-// Componente que lida com o redirecionamento
 function RedirectToLogin() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Redireciona para /login se o caminho for a raiz "/"
     navigate("/login");
   }, [navigate]);
 
-  return null; // Não precisa renderizar nada, apenas redirecionar
+  return null;
 }
 
 function App() {
@@ -28,7 +26,6 @@ function App() {
           <Navbar />
           <main>
             <Routes>
-              {/* Adiciona o redirecionamento da raiz "/" */}
               <Route path="/" element={<RedirectToLogin />} />
               <Route path="/home" element={<Home />} />
               <Route path="/dashboard" element={<Dashboard />} />

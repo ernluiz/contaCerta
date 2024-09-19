@@ -12,33 +12,33 @@
 }
 
 .transaction-list ul {
-  list-style-type: none; /* Remove os marcadores da lista */
-  padding: 0; /* Remove o preenchimento padrão */
-  margin: 0; /* Remove a margem padrão */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .transaction-list-2 {
-  display: flex; /* Usa flexbox para alinhar itens */
-  justify-content: space-between; /* Espaça os itens igualmente */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 10px; /* Espaçamento interno */
-  border-bottom: 1px solid #ddd; /* Linha separadora entre os itens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-.transaction-list-2:last-child {
-  border-bottom: none; /* Remove a linha do último item */
+.transaction-list-2 {
+  border-bottom: none;
 }
 
 .transaction-list-2 button {
-  margin-left: 5px; /* Espaço entre os botões */
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  border: none; /* Remove a borda do botão */
-  border-radius: 3px; /* Cantos arredondados do botão */
-  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-  padding: 5px 10px; /* Preenchimento interno do botão */
+  margin-left: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
-.transaction-list-2 button:hover {
-  background-color: #0056b3; /* Cor do botão ao passar o mouse */
+.transaction-list-2 button {
+  background-color: #0056b3;
 }

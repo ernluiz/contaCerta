@@ -7,17 +7,15 @@ body {
 }
 
 html {
-  scrollbar-width: none; /* Oculta a barra de rolagem */
+  scrollbar-width: none;
 }
 
-/* Para ocultar a barra de rolagem no Chrome, Safari e Edge */
 html::-webkit-scrollbar {
-  display: none; /* Oculta a barra de rolagem */
+  display: none;
 }
 
-/* Permite rolagem vertical, mas oculta a barra */
 body {
-  overflow-y: scroll; /* Habilita a rolagem vertical */
+  overflow-y: scroll;
 }
 
 code {

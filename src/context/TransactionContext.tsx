@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import ExpenseIncomeChart from '../components/Chart/ExpenseIncome';
 
 export interface Transaction {
   id: number;
@@ -8,7 +7,6 @@ export interface Transaction {
   type: 'receita' | 'despesa';
 }
 
-// Definição do contexto
 interface TransactionContextType {
   transactions: Transaction[];
   addTransaction: (transaction: Transaction) => void;
@@ -16,10 +14,8 @@ interface TransactionContextType {
   deleteTransaction: (id: number) => void;
 }
 
-// Criação do contexto
 const TransactionContext = createContext<TransactionContextType | undefined>(undefined);
 
-// Provedor do contexto
 export const TransactionProvider = ({ children }: { children: ReactNode }) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
@@ -61,12 +57,10 @@ export const TransactionProvider = ({ children }: { children: ReactNode }) => {
     <TransactionContext.Provider value={{ transactions, addTransaction, editTransaction, deleteTransaction }}>
       {children}
     </TransactionContext.Provider>
-    <ExpenseIncomeChart data={totals} />
     </div>
   );
 };
 
-// Hook para usar o contexto
 export const useTransactionContext = () => {
   const context = useContext(TransactionContext);
   if (context === undefined) {

@@ -22,7 +22,6 @@
 
 .home-container ul {
     padding-left: 20px;
-    /* Espaçamento interno da lista */
 }
 
 .centered-list {
@@ -64,9 +63,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /* Espaço entre as imagens */
     margin: 20px 0;
-    /* Margem superior e inferior */
     justify-content: center;
 }
 

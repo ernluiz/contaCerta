@@ -3,6 +3,7 @@ import { useTransactionContext } from '../../context/TransactionContext';
 import "./styles.css";
 import TransactionList from '../../components/transaction/TransactionList';
 import { Chart, LinearScale, BarElement, Title } from 'chart.js';
+import ExpenseIncomeChart from '../../components/Chart/ExpenseIncome';
 
 Chart.register(LinearScale, BarElement, Title);
 
@@ -59,6 +60,23 @@ const Dashboard = () => {
     setType('receita');
   };
 
+  const calculateTotals = () => {
+    let income = 0;
+    let expenses = 0;
+
+    transactions.forEach((transaction) => {
+      if (transaction.type === "receita") {
+        income += transaction.amount;
+      } else {
+        expenses += transaction.amount;
+      }
+    });
+
+    return { income, expenses };
+  };
+
+  const totals = calculateTotals();
+
   // const totalreceita = transactions
   //   .filter((transaction) => transaction.type === 'receita')
   //   .reduce((acc, transaction) => acc + transaction.amount, 0);
@@ -102,6 +120,7 @@ const Dashboard = () => {
           onDelete={handleDeleteTransaction}
         />
         <h2>Gráfico de Receitas e Despesas</h2>
+        <ExpenseIncomeChart data={totals} />
         {/* <div className='dashboard-summary'>
           <h3>Resumo</h3>
           <p>Total de Receitas: R$ {totalreceita.toFixed(2)}</p>
