@@ -35,23 +35,6 @@ export const TransactionProvider = ({ children }: { children: ReactNode }) => {
     setTransactions((prev) => prev.filter((transaction) => transaction.id !== id));
   };
 
-  // const calculateTotals = () => {
-  //   let income = 0;
-  //   let expenses = 0;
-
-  //   transactions.forEach((transaction) => {
-  //     if (transaction.type === "receita") {
-  //       income += transaction.amount;
-  //     } else {
-  //       expenses += transaction.amount;
-  //     }
-  //   });
-
-  //   return { income, expenses };
-  // };
-
-  // const totals = calculateTotals();
-
   return (
     <div>
       <TransactionContext.Provider value={{ transactions, addTransaction, editTransaction, deleteTransaction }}>
