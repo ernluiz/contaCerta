@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import ExpenseIncomeChart from '../components/chart/ExpenseIncome';
+import ExpenseIncomeChart from '../components/Chart/ExpenseIncome';
 
 export interface Transaction {
   id: number;
