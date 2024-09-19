@@ -1,13 +1,17 @@
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
-import config from './firebaseConfig.json'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const firebaseConfig = config.firebaseConfig;
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyB1ezLgLz7z717Z_nK6R8MMEL9q5skfSpA",
+  authDomain: "contacerta-app.firebaseapp.com",
+  projectId: "contacerta-app",
+  storageBucket: "contacerta-app.appspot.com",
+  messagingSenderId: "772105699765",
+  appId: "1:772105699765:web:da23436a45693b511e99fc"
+};
 
-// inicializa o firebase
-const app = initializeApp(firebaseConfig)
-
-// inicializar firestore e auth
-export const db = getFirestore(app)
-export const auth = getAuth(app)
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);

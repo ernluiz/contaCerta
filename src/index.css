@@ -1,10 +1,23 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scrollbar-width: none; /* Oculta a barra de rolagem */
+}
+
+/* Para ocultar a barra de rolagem no Chrome, Safari e Edge */
+html::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem */
+}
+
+/* Permite rolagem vertical, mas oculta a barra */
+body {
+  overflow-y: scroll; /* Habilita a rolagem vertical */
 }
 
 code {

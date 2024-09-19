@@ -1,0 +1,45 @@
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    width: 100% !important; /* Faz o gráfico ocupar todo o espaço disponível */
+    height: auto !important; /* Mantém a proporção do gráfico */
+}
+
+.chart-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.chart-legend-color {
+    width: 15px;
+    height: 15px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}

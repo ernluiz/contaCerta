@@ -1,0 +1,38 @@
+nav {
+  background-color: #f4f4f4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav a.active {
+  color: blue;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: darkblue;
+}

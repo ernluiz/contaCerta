@@ -1,0 +1,35 @@
+.sobre-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 60px;
+    line-height: 1.6;
+}
+
+.sobre-container h1,
+.sobre-container h2,
+.sobre-container h3 {
+    color: #222;
+    text-align: center;
+}
+
+.sobre-container p,
+.sobre-container ul {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.sobre-container ul {
+    padding-left: 20px;
+}
+
+.sobre-container blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.sobre-container strong {
+    color: #007bff;
+}
