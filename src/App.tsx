@@ -21,20 +21,20 @@ function RedirectToLogin() {
 
 function App() {
   return (
-      <TransactionProvider>
-        <Router>
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<RedirectToLogin />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="/login" element={<Login />} />
-            </Routes>
-          </main>
-        </Router>
-      </TransactionProvider>
+    <TransactionProvider>
+      <Router>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<RedirectToLogin />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </main>
+      </Router>
+    </TransactionProvider>
   );
 }
 
