@@ -22,6 +22,13 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions, onEdit,
     }
   }, [transactions]);
 
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(value);
+  };
+
   return (
     <div>
       <h3>Transações</h3>
@@ -33,12 +40,16 @@ const TransactionList: React.FC<TransactionListProps> = ({ transactions, onEdit,
             {transactions.map((transaction) => (
               <li key={transaction.id} className='transaction-item'>
                 <span>
-                  Transação: {transaction.description} {transaction.type === 'receita' ? 'R$ ' : '-R$ '}
-                  {transaction.amount.toFixed(2)}
+                  {transaction.type === 'receita' ? 'Receita: ' : 'Despesa: '}
+                  {transaction.description} {formatCurrency(transaction.amount)}
                 </span>
                 <div className='button-group'>
-                  <button onClick={() => onEdit(transaction.id)}>Editar</button>
-                  <button onClick={() => onDelete(transaction.id)}>Excluir</button>
+                  <button onClick={() => onEdit(transaction.id)} aria-label={`Editar transação ${transaction.description}`}>
+                    Editar
+                  </button>
+                  <button onClick={() => onDelete(transaction.id)} aria-label={`Excluir transação ${transaction.description}`}>
+                    Excluir
+                  </button>
                 </div>
               </li>
             ))}

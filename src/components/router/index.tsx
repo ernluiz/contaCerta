@@ -24,7 +24,7 @@ const Router = () => {
     );
 
     const renderizarPagina = () => {
-        console.log(getPaginaAtual); // Substitua o alert por console.log para evitar interrupções
+        console.log(getPaginaAtual);
         switch (getPaginaAtual) {
             case RouterPages.login:
                 return <Login />;

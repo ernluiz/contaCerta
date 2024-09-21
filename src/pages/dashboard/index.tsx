@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useTransactionContext } from '../../context/TransactionContext';
+import { useThemeContext } from '../../components/themes/ThemeContext';
 import "./styles.css";
 import TransactionList from '../../components/transaction/TransactionList';
-import { Chart, LinearScale, BarElement, Title } from 'chart.js';
 import ExpenseIncomeChart from '../../components/Chart/ExpenseIncome';
-
-Chart.register(LinearScale, BarElement, Title);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
-
   const { transactions, addTransaction, editTransaction, deleteTransaction } = useTransactionContext();
+  const { theme, toggleTheme } = useThemeContext();
   const [description, setDescription] = useState<string>('');
   const [amount, setAmount] = useState<number>(0);
   const [type, setType] = useState<'receita' | 'despesa'>('receita');
@@ -60,22 +60,17 @@ const Dashboard = () => {
     setType('receita');
   };
 
-  const calculateTotals = () => {
-    let income = 0;
-    let expenses = 0;
-
-    transactions.forEach((transaction) => {
-      if (transaction.type === "receita") {
-        income += transaction.amount;
+  const totals = transactions.reduce(
+    (acc, transaction) => {
+      if (transaction.type === 'receita') {
+        acc.income += transaction.amount;
       } else {
-        expenses += transaction.amount;
+        acc.expenses += transaction.amount;
       }
-    });
-
-    return { income, expenses };
-  };
-
-  const totals = calculateTotals();
+      return acc;
+    },
+    { income: 0, expenses: 0 }
+  );
 
   const totalreceita = transactions
     .filter((transaction) => transaction.type === 'receita')
@@ -88,9 +83,16 @@ const Dashboard = () => {
   const balance = totalreceita - totaldespesas;
 
   return (
-    <div className='dashboard-container'>
-      <h3>Adicionar/Editar Transação</h3>
-      <div className='dashboard-input'>
+    <div className={`dashboard-container ${theme}`}>
+      <div className="header-add">
+        <h3 className="header-title">Adicionar/Editar Transação</h3>
+        <div className="header-button">
+          <button onClick={toggleTheme} aria-label="Toggle theme">
+            <FontAwesomeIcon icon={theme ? faSun : faMoon} />
+          </button>
+        </div>
+      </div>
+      <div className="dashboard-input">
         <input
           type="text"
           placeholder="Descrição"
@@ -113,7 +115,7 @@ const Dashboard = () => {
           {editingId ? 'Salvar Alterações' : 'Adicionar Transação'}
         </button>
       </div>
-      <div className='dashboard-content'>
+      <div className="dashboard-content">
         <TransactionList
           transactions={transactions}
           onEdit={handleEditTransaction}
@@ -130,6 +132,6 @@ const Dashboard = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Dashboard;

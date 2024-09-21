@@ -59,3 +59,13 @@ nav ul li a.active {
 .chart-canvas {
   max-height: 150px;
 }
+
+body.light {
+  background-color: #f4f7fc;
+  color: #1c1c1c;
+}
+
+body.dark {
+  background-color: #1c1c1c;
+  color: #f4f7fc;
+}

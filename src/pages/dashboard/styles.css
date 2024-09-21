@@ -1,24 +1,38 @@
+.header-add {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+}
+
+.header-title {
+    flex: 1;
+    text-align: center;
+}
+
+.header-button {
+    margin-left: auto;
+}
+
 .dashboard-container {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
     margin: 0;
     padding-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #333;
 }
 
 .dashboard-container h1,
 .dashboard-container h2,
 .dashboard-container h3 {
-    color: #222;
+    padding-top: 5px;
     text-align: center;
 }
 
 .dashboard-container p {
-    margin: 10px 0;
+    margin: 5px 0;
     text-align: center;
 }
 
@@ -30,19 +44,17 @@
 
 .dashboard-input input,
 .dashboard-input select {
-    padding: 10px;
-    margin: 10px 0;
+    padding: 5px;
+    margin: 5px 0;
     border-radius: 8px;
     border: 1px solid #ddd;
     font-size: 1rem;
-    background-color: #f9f9f9;
     outline: none;
     transition: all 0.3s ease;
-    color: #222;
 }
 
 .dashboard-input button {
-    padding: 10px 15px;
+    padding: 7px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -54,12 +66,8 @@
     background-color: #0056b3;
 }
 
-input[type="text"] {
-    width: 400px;
-}
-
 input[type="number"] {
-    width: 200px;
+    width: 100px;
 }
 
 input[type="text"]:focus,
@@ -76,7 +84,7 @@ button {
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 0px 0;
     transition: background-color 0.3s ease;
 }
 
@@ -89,9 +97,7 @@ button:hover {
     max-width: 70vw;
     overflow-y: auto;
     padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #f9f9f9;
 }
 
 .dashboard-transactions ul {
@@ -111,14 +117,12 @@ button:hover {
 }
 
 .dashboard-transactions li {
-    background-color: #f9f9f9;
     border-radius: 8px;
     padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-height: 50px;
-    box-shadow: 0 2px 5px rgba(56, 73, 149, 0.6);
     transition: transform 0.3s ease;
 }
 
@@ -127,8 +131,6 @@ button:hover {
 }
 
 .transaction-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
@@ -155,23 +157,20 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     padding: 5px;
-    background-color: #c0d3ff;
     border-left: 1px solid #ddd;
     box-shadow: 0px 8px 20px rgba(15, 59, 148, 0.6);
 }
 
 .dashboard-summary p {
     font-size: 1.1rem;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .dashboard-summary p span {
     font-weight: bold;
-    color: #333;
 }
 
 .dashboard-summary p#balance {
-    color: #4a90e2;
     font-size: 1.2rem;
 }
 
@@ -191,4 +190,40 @@ button:hover {
         font-size: 0.9rem;
         padding: 8px;
     }
+}
+
+
+
+.dashboard-input input.light,
+.dashboard-input select.light {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    color: #222;
+}
+
+.transaction-item.light {
+    background-color: #222222;
+    border: 1px solid #ddd;
+}
+
+.dashboard-container.dark {
+    background-color: #1c1c1c;
+    color: #e4e4e4;
+}
+
+.dashboard-input input.dark,
+.dashboard-input select.dark {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #e4e4e4;
+}
+
+.dashboard-transactions.dark,
+.transaction-item.dark {
+    background-color: #f4f4f4;
+    border: 1px solid #555;
+}
+
+.dashboard-transactions.light{
+    background-color: #333;
 }
